@@ -38,6 +38,18 @@ public class Board {
         }
     }
 
+    public boolean isFilled() {
+        for (Square[] square : this.squares) {
+            for (Square value : square) {
+                if (value.isEmpty()) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     public Square[][] getSquares() {
         return this.squares;
     }
