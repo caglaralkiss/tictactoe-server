@@ -5,17 +5,20 @@ import com.caglaralkiss.tictactoe.constants.Turn;
 
 public class Game {
 
+    private final String id;
     private Board board;
     private GameState gameState;
     private Player player1;
     private Player player2;
     private Turn turn;
 
-    public Game() {
+    public Game(String id) {
+        this.id = id;
         this.board = new Board();
     }
 
-    public Game(Board board, GameState gameState, Player player1, Player player2, Turn turn) {
+    public Game(String id, Board board, GameState gameState, Player player1, Player player2, Turn turn) {
+        this.id = id;
         this.board = board;
         this.gameState = gameState;
         this.player1 = player1;
@@ -61,5 +64,9 @@ public class Game {
 
     public void setPlayer1(Player player1) {
         this.player1 = player1;
+    }
+
+    public String getId() {
+        return id;
     }
 }
