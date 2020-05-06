@@ -1,7 +1,11 @@
 package com.caglaralkiss.tictactoe.constants;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum SquareState {
+    @JsonProperty("X")
     X_MARK("X"),
+    @JsonProperty("O")
     O_MARK("O"),
     EMPTY_MARK("EMPTY");
 

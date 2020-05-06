@@ -111,15 +111,7 @@ public class Message {
         }
 
         public Message build() {
-            Message message = new Message(this);
-            this.validateWinner(message);
             return new Message(this);
-        }
-
-        public void validateWinner(Message message) {
-            if (message.getWinner() == null || message.getWinner() == GameState.PLAYING) {
-                logger.error("Invalid GameState");
-            }
         }
     }
 }
