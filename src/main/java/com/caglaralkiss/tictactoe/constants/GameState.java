@@ -9,6 +9,6 @@ public enum GameState {
     X_WIN,
     @JsonProperty(value = "O")
     O_WIN,
-    @JsonSetter(value = "_")
+    @JsonProperty(value = "_")
     DRAW
 }
