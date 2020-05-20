@@ -131,6 +131,7 @@ public class GameHandler extends TextWebSocketHandler {
     private void executeDrawLogic(Game game, Board board, Player current, Player opponent) {
         Message drawResultMessage = new Message.MessageBuilder(MessageType.GAME_RESULT, game.getId())
                 .winner(GameState.DRAW)
+                .turn(Turn.X_TURN)
                 .build();
         webSocketSessionsRegistry.sendMessage(current.getId(), drawResultMessage);
         webSocketSessionsRegistry.sendMessage(opponent.getId(), drawResultMessage);
@@ -142,6 +143,7 @@ public class GameHandler extends TextWebSocketHandler {
     private void executeWinningLogic(Game game, Board board, Player current, Player opponent, GameState winner) {
         Message.MessageBuilder commonMsg =
                 new Message.MessageBuilder(MessageType.GAME_RESULT, game.getId())
+                        .turn(Turn.X_TURN)
                         .winner(winner);
 
         if (winner == GameState.X_WIN) {
